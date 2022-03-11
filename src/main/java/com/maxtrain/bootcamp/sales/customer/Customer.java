@@ -48,4 +48,5 @@ public class Customer {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
 }

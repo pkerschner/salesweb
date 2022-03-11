@@ -35,7 +35,7 @@ public class OrderController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Orders> PostOrder(@RequestBody Orders order) {
+	public ResponseEntity<Orders> postOrder(@RequestBody Orders order) {
 		if(order == null || order.getId() != 0) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -88,6 +88,7 @@ public class OrderController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		ordRepo.delete(order.get());
-		return new ResponseEntity <>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+
 }

@@ -38,7 +38,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Customer> PostCustomer(@RequestBody Customer customer) {
+	public ResponseEntity<Customer> postCustomer(@RequestBody Customer customer) {
 		if(customer == null || customer.getId() != 0) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -70,4 +70,5 @@ public class CustomerController {
 		custRepo.delete(customer.get());
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+
 }
